@@ -1,3 +1,5 @@
+visualizarDipolo(1, 25, -15);
+
 function visualizarDipolo(d, Qp, Qn)
 % Valores predeterminados si no se proporcionan
 if nargin < 1
@@ -97,6 +99,3 @@ text(xCn, yCn-0.3, ['Q = ', num2str(Qn)], 'HorizontalAlignment', 'center');
 
 hold off;
 end
-
-
-visualizarDipolo(1.2, 15, -15);
