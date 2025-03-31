@@ -1,8 +1,4 @@
-d = input("Ingrese la distancia: ");
-Qp = input("Ingrese la carga de la primera particula: ");
-Qn = input("Ingrese la carga de la segunda particula: ");
-
-visualizarDipolo(d, Qp, Qn);
+visualizarDipolo(1, 25, -15);
 
 function visualizarDipolo(d, Qp, Qn)
 % Valores predeterminados si no se proporcionan
@@ -36,14 +32,14 @@ kC = 9e9;               % Constante de Coulomb (1/4πε₀)
 % Cálculo del campo eléctrico para la carga positiva
 Rx_p = xG - xCp;
 Ry_p = yG - yCp;
-R_p = sqrt(Rx_p.^2 + Ry_p.^2).^2;
+R_p = sqrt(Rx_p.^2 + Ry_p.^2).^3;
 Ex_p = kC * Qp * Rx_p ./ R_p;
 Ey_p = kC * Qp * Ry_p ./ R_p;
 
 % Cálculo del campo eléctrico para la carga negativa
 Rx_n = xG - xCn;
 Ry_n = yG - yCn;
-R_n = sqrt(Rx_n.^2 + Ry_n.^2).^2;
+R_n = sqrt(Rx_n.^2 + Ry_n.^2).^3;
 Ex_n = kC * Qn * Rx_n ./ R_n;
 Ey_n = kC * Qn * Ry_n ./ R_n;
 
