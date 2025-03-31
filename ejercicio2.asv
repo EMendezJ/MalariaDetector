@@ -1,0 +1,49 @@
+%Autor Luis ALvaro Rosales Salazar
+%Fecha 8 de Octubre de 2024
+
+%Definir los valores iniciales
+t0 = 0;
+tf = 0.2;
+vox = 0;
+xo = 4;
+m = 0.0006;
+k = 10;
+
+%Definir el vector del tiempo
+t = linspace(t0, tf, 200);
+
+%Definir las 2 y
+y1 = zeros(1, length(t));
+y2 = zeros(1,length(t));
+y1(1) = vox;
+y2(1) = xo;
+
+%Hallar los valores de y
+for i = 2:length(t)
+y1(i) = y1(i-1)-(((k * y2(i-1))/m)*(t(i) - t(i-1)));
+y2(i) = y2(i-1) + (y1(i-1) * (t(i) - t(i-1)));
+end
+
+%Encontrar los picos de la funcion y1
+[pks, locs] = findpeaks(y1,t);
+
+%Calcular el periodo como la diferencia entre dos picos sucesivos
+T = mean(diff(locs));
+
+%I
+
+%Graficar la primera grafica
+subplot(2,1,1);
+plot(t, y1);
+title('Grafica de velocidad contra tiempo');
+xlabel('Tiempo')
+ylabel('Posicion')
+legend('Velolocidad', 'Location', 'northeast');
+
+%Graficar la segunda grafica
+subplot(2,1,2);
+plot(t, y2);
+title('Grafica de posicion contra tiempo');
+xlabel('Tiempo');
+ylabel('Posicion')
+legend('Posicion', 'Location', 'northeast');
