@@ -1,9 +1,8 @@
-d = input()
+d = input("Ingrese la distancia: ");
+Qp = input("Ingrese la carga de la primera particula: ");
+Qn = input("Ingrese la carga de la segunda particula: ");
 
-
-visualizarDipolo(1, 25, -15);
-
-
+visualizarDipolo(d, Qp, Qn);
 
 function visualizarDipolo(d, Qp, Qn)
 % Valores predeterminados si no se proporcionan
