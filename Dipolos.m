@@ -64,7 +64,7 @@ figure('Name', 'Campo Eléctrico de un Dipolo');
 h = quiver(xG, yG, u, v, 'autoscalefactor', 0.5);
 set(h, 'color', [0.7 0 0.7]);
 title(['Campo Eléctrico - Distancia = ', num2str(d), ' m']);
-axis([-1.5 1.5 -1.5 1.5]);
+axis([-d 1.5 -1.5 d]);
 xlabel('x (m)');
 ylabel('y (m)');
 box on;
