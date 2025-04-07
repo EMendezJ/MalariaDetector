@@ -35,7 +35,7 @@ function visualizarDipolo(d, Qp, Qn, n)
     hold on;
     
     % Generar posiciones para la primera fila (superior)
-    yCp = -d/2;
+    yCp = d/2;
     for i = 1:n
         % Calcular posición horizontal centrada
         xCp = (-(n-1)/2 + (i-1)) * sep_x;
@@ -67,7 +67,7 @@ function visualizarDipolo(d, Qp, Qn, n)
     text(-n*sep_x/2-0.3, yCp, ['Q = ', num2str(Qp)], 'VerticalAlignment', 'middle');
     
     % Generar posiciones para la segunda fila (inferior)
-    yCn = d/2;
+    yCn = -d/2;
     for i = 1:n
         % Calcular posición horizontal centrada
         xCn = (-(n-1)/2 + (i-1)) * sep_x;
