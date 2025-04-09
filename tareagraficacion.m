@@ -83,30 +83,33 @@ x_points = linspace(-lim, lim, 200);
 
 for i = 1:length(x_points)
     % y = 0.5
+    % Se cacula el vector que va desde un punto hasta la carga
     r1x = x_points(i) - pos1(1);
     r1y = 0.5 - pos1(2);
     r1 = sqrt(r1x^2 + r1y^2);
-    
+
+    % Se cacula el vector que va desde un punto hasta la carga
     r2x = x_points(i) - pos2(1);
     r2y = 0.5 - pos2(2);
     r2 = sqrt(r2x^2 + r2y^2);
-    
+
+    % Se calcula el campo electrico de cada particula en el eje x y en el eje y
     Ex1 = kC * q1 * r1x / (r1^3 + eps);
     Ey1 = kC * q1 * r1y / (r1^3 + eps);
     Ex2 = kC * q2 * r2x / (r2^3 + eps);
     Ey2 = kC * q2 * r2y / (r2^3 + eps);
-    
     Ex_total = Ex1 + Ex2;
     Ey_total = Ey1 + Ey2;
     E_y05(i) = sqrt(Ex_total^2 + Ey_total^2);
 
     % y = 1
+    % Se cacula el vector que va desde un punto hasta la carga
     r1y = 1 - pos1(2);
     r1 = sqrt(r1x^2 + r1y^2);
-    
     r2y = 1 - pos2(2);
     r2 = sqrt(r2x^2 + r2y^2);
-    
+
+    % Se calcula el campo electrico de cada particula en el eje x y en el eje y
     Ex1 = kC * q1 * r1x / (r1^3 + eps);
     Ey1 = kC * q1 * r1y / (r1^3 + eps);
     Ex2 = kC * q2 * r2x / (r2^3 + eps);
