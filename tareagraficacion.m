@@ -14,7 +14,7 @@ kC = 9e9;           % Constante de Coulomb (N·m^2/C^2)
 % Crear malla usando la funcion de meshgrid
 [xG, yG] = meshgrid(linspace(-lim, lim, N), linspace(-lim, lim, N));
 
-% Iniciación de la matriz de los ampos electricos en el eje x y en el eje y
+% Iniciación de la matriz de los campos electricos en el eje x y en el eje y
 Ex = zeros(size(xG));
 Ey = zeros(size(yG));
 
